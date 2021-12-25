@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.main-subtitle{
+ font-family: 'GowunDodum-Regular';
+  font-size: 1.7em;
+  color: #FFFFFF;
+}
+
+.page-header2 .card-pricing.card-plain .card-category,
+.page-header2 .card-pricing.card-plain .card-title {
+  color: #FFFFFF; }
+
+
+
+.page-header2 {
+  background-color: #B2AFAB;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 999px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .page-header2 .filter::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1; }
+  

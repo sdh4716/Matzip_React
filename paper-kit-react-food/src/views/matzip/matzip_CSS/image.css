@@ -1,0 +1,40 @@
+
+.lb-wrap {
+  width: 100%;
+  /* margin: 10px auto; */
+  border: 1px solid #ffffff;
+  position: relative;
+
+}
+.lb-wrap img {
+  width: 100%;
+  vertical-align: middle;
+}
+.lb-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.textfont {
+  font-family: 'GowunDodum-Regular';
+  font-size: 25px;
+  font-style:italic;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.616);
+}
+
+.lb-image{
+  height: 170px; 
+  object-fit: cover;
+  
+}
+
+/* Layout(No Edit) */
+@media(max-width:440px) {
+  .lb-wrap {
+  width: 95%;
+  }
+}

@@ -1,0 +1,81 @@
+.card-register2  {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  max-width: 80%;
+  margin: 20px 0 70px;
+  min-height: 500px;
+  padding: 30px; 
+
+}
+
+.card-food {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  max-width: 90%;
+  margin: 20px 0 70px;
+  min-height: 500px;
+  padding: 20px; 
+
+}
+
+
+.card-menu  {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  max-width: 70%;
+  margin: 20px 0 70px;
+  min-height: 500px;
+  padding: 30px; 
+  
+
+
+}
+
+.card-contact  {
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  max-width: 90%;
+  margin: 20px 0 70px;
+  min-height: auto;
+  padding: 30px; 
+
+
+}
+
+.card-title {
+  font-size: 20pt;
+  font-family: 'GowunDodum-Regular';
+  
+
+}
+
+.sidebar-title {
+  font-size: 15pt;
+  font-family: 'GowunDodum-Regular';
+}
+
+.sidebar-board {
+  font-size: 25pt;
+  font-family: 'GowunDodum-Regular';
+  font-weight: bold;
+}
+
+.info-title {
+  font-size: 11pt;
+  font-family: 'GowunDodum-Regular';
+  font-weight: bold;
+}
+
+
+  .card.no-transition:hover, .card-board { 
+        box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+        transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        -moz-transform: none; }
+
+ 
