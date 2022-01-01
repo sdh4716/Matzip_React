@@ -15,7 +15,7 @@ const Reply=(props)=>{
            [e.target.name] : e.target.value
         })
     }
-    const submitBoard = (num) =>{
+    const submitReply = (num) =>{
         axios.post('/matzip/resCommentInsert'+num,{
             content : replyContent.content,
             writer : replyContent.writer,
@@ -28,13 +28,13 @@ const Reply=(props)=>{
     }
     return(
         <Container>
-            <div className="card-title">댓글</div>
+            <div className="card-title">평가</div>
             <Row className="mb-3">
                 <Col sm="10">
                 <Form.Control type="text" placeholder="200자 이내로 리뷰를 남겨주세요." size="50" maxLength='200' name="content" onChange={getValue} />
                 </Col>
                
-                <Button className="btn-round" color="danger" onClick={submitBoard} position='absolute'> 등록 </Button>
+                <Button className="btn-round" color="danger" onClick={submitReply} position='absolute'> 등록 </Button>
             </Row>
             <Row>
             <Form.Group>

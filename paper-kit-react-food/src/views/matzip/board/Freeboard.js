@@ -73,7 +73,6 @@ function Freeboard() {
 <br/>
 <br/>
 <br/>
-<br/>
 
 
 
@@ -84,7 +83,9 @@ function Freeboard() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <section
     >
-      <div><Sidebar /></div>
+      <div><Sidebar 
+      
+      /></div>
     </section>
 
     
@@ -124,16 +125,16 @@ function Freeboard() {
 </Row>
   {/*테이블 top */}
   
-  <table class="table"
-    style={{width:'900px'}}>
+  <table class="table table-hover"
+    style={{width:'800px',
+            height:'100px'}}>
         <thead>
           <tr>
-                <td>글번호</td>
-                <td>제목</td>
-                <td>작성자</td>
-                <td>글내용</td>
-                <td>조회수</td>
-                <td>작성일</td>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>조회수</th>
+                <th>작성일</th>
           </tr>
         </thead>
 
@@ -142,14 +143,17 @@ function Freeboard() {
         >
         {pagedMovies.map((movie) => (
             <tr>
-              <Link to={"/freeview/"+movie.num}>
-                <th> {movie.num} </th>
-              </Link>
-              <th> {movie.title} </th>
-              <th> {movie.writer} </th>
-              <th> {movie.content}</th>
-              <th> {movie.hitcount} </th>
-              <th> {movie.regdate} </th>
+                <td> 
+                  {movie.num} 
+                </td>
+              <td> 
+                <Link to={"/freeview/"+movie.num}>
+                {movie.title} 
+                </Link>
+              </td>
+              <td> {movie.writer} </td>
+              <td> {movie.hitcount} </td>
+              <td> {movie.regdate} </td>
             </tr>
           ))}
         </tbody>

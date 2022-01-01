@@ -27,11 +27,10 @@ import IndexHeader from "components/Headers/IndexHeader.js";
 
 // index sections
 
-import Contact from './matzip/Contact';
 import { ChakraProvider } from "@chakra-ui/react"
 import FooterMain from "./matzip/FooterMain";
-import Menu2 from "./matzip/Menu2";
 import Slider from './matzip/Slider';
+import Menu_Card from './matzip/Menu_Card'
 
 function Index() {
   document.documentElement.classList.remove("nav-open");
@@ -53,8 +52,7 @@ function Index() {
         {/* <NewCardPractice/> */}
         </ChakraProvider>
         {/* <Menu/> */}
-        <Menu2/>
-        <Contact/>
+        <Menu_Card/>
         <FooterMain/>
 
     </>

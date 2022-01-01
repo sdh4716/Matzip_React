@@ -78,4 +78,7 @@
         -ms-transform: none;
         -moz-transform: none; }
 
- 
+
+.card-shadow {
+  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.3);
+}

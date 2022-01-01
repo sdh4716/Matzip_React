@@ -1,9 +1,16 @@
 import React,{Component} from "react"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Form } from "reactstrap"
-
+import { Container, Form, Row, Col, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap"
+import NavbarWhite from "components/Navbars/NavbarWhite"
+import styled from "styled-components"
+import '../matzip_CSS/Card.css'
 const Adview = (props) =>{
+    const Navbar = styled.div
+    `
+        margin-bottom : 100px
+    `;
+
     const [loadImage, setLoadImage] = useState({
         num:'',
         title:'',
@@ -29,16 +36,40 @@ const Adview = (props) =>{
     }
 
     return(
-       
+        <>
         <div>
-            번호:{loadImage.num}<br/>
-            제목:{loadImage.title}<br/>
-            작성자:{loadImage.writer}<br/>
-            {/* 그림: <img src=("assets/img/uploadimage/"+loadImage.adname)/><br/> */}
-            {/* 그림: <img src={require("/image/"+loadImage.adname)}/><br/> */}
-            <img src={process.env.PUBLIC_URL +"/image/"+ loadImage.adname} alt="image" /><br/>
-            내용:{loadImage.content}<br/> 
+        <Navbar>
+        <NavbarWhite/>
+        </Navbar>
+            <Container>
+            <div className="card-shadow">
+            <Card 
+                className="card-plain"
+                body
+
+            >
+                <CardBody>
+                <CardTitle tag="h5">
+                {loadImage.title}
+                </CardTitle>
+                <CardSubtitle
+                    className="mb-2 text-muted"
+                    tag="h6"
+                >
+                상호명 : {loadImage.writer}
+                </CardSubtitle>
+                <br/>
+                <CardText>
+                {loadImage.content}
+                </CardText>
+                <img src={process.env.PUBLIC_URL +"/image/"+ loadImage.adname} alt="image" />
+                </CardBody>
+            </Card>
+            </div>
+            
+            </Container>
         </div>
+        </>
     )
 }
 export default Adview;

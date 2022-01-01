@@ -91,7 +91,6 @@ function Advboard() { //이벤트 게시판
 <br/>
 <br/>
 <br/>
-<br/>
 
 
 
@@ -142,8 +141,8 @@ function Advboard() { //이벤트 게시판
 </Row>
   {/*테이블 top */}
   
-  <table class="table"
-    style={{width:'900px'}}>
+  <table class="table table-hover"
+    style={{width:'800px'}}>
         <thead>
           <tr>
           <th>글번호</th>
@@ -159,10 +158,10 @@ function Advboard() { //이벤트 게시판
         >
         {pagedMovies.map((movie) => (
             <tr>
-              <Link to={"/adview/"+movie.num}>
+              
                 <th> {movie.num} </th>
-              </Link>
-              <th> {movie.title} </th>
+              
+              <th> <Link to={"/adview/"+movie.num}>{movie.title} </Link></th>
               <th> {movie.writer} </th>
               <th> {movie.hitcount} </th>
               <th> {movie.regdate} </th>

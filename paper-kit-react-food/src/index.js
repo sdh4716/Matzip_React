@@ -43,19 +43,10 @@ import RestaurantPage from "views/matzip/Restaurant/RestaurantPage";
 import InsertFormAdImage from "views/matzip/InsertFormAdImage";
 import Adview from "views/matzip/board/Adview";
 import MoviesPage from "views/matzip/pagination/MoviesPage";
-import RestB from "views/matzip/Restaurant/RestB";
 import InfoPage2 from "views/matzip/Infopage2";
 import InfoPage3 from "views/matzip/InfoPage3";
-import RestH from "views/matzip/Restaurant/RestH";
-import RestI from "views/matzip/Restaurant/RestI";
-import RestY from "views/matzip/Restaurant/RestY";
-import RestJ from "views/matzip/Restaurant/RestJ";
-import RestD from "views/matzip/Restaurant/RestD";
-import RestYY from "views/matzip/Restaurant/RestYY";
-import RestG from "views/matzip/Restaurant/RestG";
 import FreeView from "views/matzip/board/freeview";
 import AdView from "views/matzip/board/Adview"
-import RestaurantPage2 from "views/matzip/Restaurant/RestaurantPage2";
 import Infopageget from "views/matzip/Infopageget";
 import QnaView from "views/matzip/board/qnaView";
 import RestaurantView from "views/matzip/Restaurant/RestaurantView";
@@ -79,53 +70,11 @@ ReactDOM.render(
       component={RestaurantView} />
 
 
-{/* 메뉴별 맛집 */}
-      <Route
-      path="/respagefood/한식"
-      component={RestH}
-      />
-      <Route
-      path="/respagefood/일식"
-      component={RestI}
-      />
-      <Route
-      path="/respagefood/양식"
-      component={RestY}
-      />
-      <Route
-      path="/respagefood/중식"
-      component={RestJ}
-      />
-      <Route
-      path="/respagefood/디저트"
-      component={RestD}
-      />
-      <Route
-      path="/respagefood/야식"
-      component={RestYY}
-      />
-      <Route
-      path="/respagefood/분식"
-      component={RestB}
-      />
-      <Route
-      path="/respagefood/기타"
-      component={RestG}
-      />
-
-    
-
 
       <Route
       path="/respage"
       component={RestaurantPage}
       />
-
-      <Route
-      path="/respagefood"
-      component={RestaurantPage2}
-      />
-
 
 
 

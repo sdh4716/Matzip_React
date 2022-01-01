@@ -72,7 +72,6 @@ function QNAboard() {
 <br/>
 <br/>
 <br/>
-<br/>
 
 
 
@@ -141,10 +140,10 @@ function QNAboard() {
         >
         {pagedMovies.map((movie) => (
             <tr>
-              <Link to={"/qnaView/"+movie.num}>
+              
                 <th> {movie.num} </th>
-              </Link>
-              <th> {movie.title} </th>
+             
+              <th> <Link to={"/qnaView/"+movie.num}>{movie.title}  </Link></th>
               <th> {movie.writer} </th>
               <th> {movie.hitcount} </th>
               <th> {movie.regdate}</th>

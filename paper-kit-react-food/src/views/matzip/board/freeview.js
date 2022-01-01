@@ -2,9 +2,17 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import { Button, Container, Form } from "react-bootstrap";
 import NavbarWhite from "components/Navbars/NavbarWhite";
+import styled from "styled-components"
+import '../matzip_CSS/Card.css'
+import { Card } from "reactstrap";
 
 
 const FreeView = (props) => { //자유게시판 상세페이지
+    const Navbar = styled.div
+    `
+        margin-bottom : 100px
+    `;
+
     const [formContent , setFormContent]= useState({ //상세정보
         num: '',
         title : '',
@@ -92,10 +100,17 @@ const FreeView = (props) => { //자유게시판 상세페이지
  
     return(
     <>
+    <Navbar>
     <NavbarWhite/>
-    <br/><br/><br/><br/><br/><br/>
+    </Navbar>
       <Container>
+      <div className="card-shadow">
+      <Card 
+        className="card-plain"
+         body
+      >
         <Form>
+        
             {/* <Form.Group className="mb-3" controlId="title" >
                 <Form.Label>번호:</Form.Label>
                 <Form.Control plaintext readOnly defaultValue={formContent.num} />
@@ -159,6 +174,8 @@ const FreeView = (props) => { //자유게시판 상세페이지
           ))}
         </tbody>
         </table>
+        </Card>
+        </div>
        </Container>
     </>
     )

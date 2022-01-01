@@ -68,9 +68,9 @@ function RestaurantCard() {
       })
   }
 
-  const [movies, setMovies] = useState({ // 영화 정보를 담는 state
-      data: [], // 영화 정보
-      pageSize: 8, // 한 페이지에 보여줄 아이템(영화목록) 개수
+  const [movies, setMovies] = useState({ // 음식점 정보를 담는 state
+      data: [], // 음식점 정보
+      pageSize: 8, // 한 페이지에 보여줄 아이템(음식점목록) 개수
       currentPage: 1 // 현재 활성화된 페이지 위치
     });
   
@@ -87,9 +87,9 @@ return(
   <>
   
   <Container>
-    <form class="d=flex mb-2">
+    <form class="d=flex mb-2"> 
     <input placeholder="음식점 검색" name="word" class="form-control" 
-    onChange={getValue} value={word}>
+    onChange={getValue} value={word} > 
     </input>
     </form>
     <br/><br/>
@@ -118,8 +118,8 @@ return(
 <br/>
 <br/>
   <Col>
-<Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
-  <Image src={require("assets/img/food/res3.jpg").default} />
+<Box maxH="lg" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
+  <Image src={process.env.PUBLIC_URL +"/image/"+ movie.newname} />
   <Box p="6">
     <Box d="flex" alignItems="baseline" className="info-title">
       <Badge borderRadius="full" px="2" colorScheme="orange">

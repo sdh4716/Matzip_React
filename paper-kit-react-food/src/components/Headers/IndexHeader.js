@@ -29,7 +29,7 @@ import './IndexHeader.css';
 
 
 function IndexHeader() {
- 
+
   const getValue = (e) =>{
     sessionStorage.setItem("word",e.target.value)
     

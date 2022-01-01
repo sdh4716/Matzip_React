@@ -33,9 +33,14 @@ import {
   Nav,
   Container,
 } from "reactstrap";
-import Example from "./testtest2";
 
 function NavbarWhite() {
+  const authenticated = sessionStorage.getItem("ID") !== null;
+
+  const logout=()=> {
+    sessionStorage.clear();
+  }
+
   const [navbarColor, setNavbarColor] = React.useState("");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -96,86 +101,70 @@ function NavbarWhite() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-            <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="/join"
-                // target="_blank"
-                title="회원가입"
-              >
-                {/* <i className="fa fa-twitter" /> */}
-                <p className="d-lg-none">회원가입</p>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href="/login"
-                // target="_blank"
-                title="로그인"
-              >
-                {/* <i className="fa fa-facebook-square" /> */}
-                <p className="d-lg-none">로그인</p>
-              </NavLink>
-            </NavItem>
+            {/* authenticate 유저가 존재하는지 
+        참 거짓 으로 로그인&로그아웃 표시 */}
 
-            <NavItem>
+{authenticated ? 
+        (
+          <>
+          <NavItem>
               <NavLink
-                data-placement="bottom"
+                href="/index"
+                onClick={logout}
+              >
+               로그아웃
+              </NavLink>
+          </NavItem>
+          <NavItem>
+              <NavLink
                 href="/freeboard"
-                // target="_blank"
-                title="게시판"
               >
-                {/* <i className="fa fa-instagram" /> */}
-                <p className="d-lg-none">게시판</p>
+               게시판
               </NavLink>
-            </NavItem>
-
-            <NavItem>
+          </NavItem>
+          <NavItem>
               <NavLink
-                data-placement="bottom"
                 href="/respage"
-                // target="_blank"
-                title="음식점목록"
               >
-                {/* <i className="fa fa-instagram" /> */}
-                <p className="d-lg-none">음식점목록</p>
+               음식점 목록
               </NavLink>
-              </NavItem>
+          </NavItem>
+          </>
+        )
 
-            <div class="d-none d-lg-block">
-            <Example /> 
-            </div>
-            {/* <NavItem>
-              <NavLink
-                data-placement="bottom"
-                href=""
-                target="_blank"
-                title="Star on GitHub"
-              >
-                <i className="fa fa-github" />
-                <p className="d-lg-none">기타</p>
-              </NavLink>
-            </NavItem>
+        :(
+          <>
            <NavItem>
               <NavLink
-                href=""
-                target="_blank"
+                href="/login"
               >
-                <i className="nc-icon nc-book-bookmark" /> 
-                <p className="d-lg-none">기타</p>
+               로그인
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <Button
-                className="btn-round"
-                color="danger"
-                href=""
-                target="_blank"
+          </NavItem>
+          <NavItem>
+              <NavLink
+                href="/join"
               >
-                <i className="nc-icon nc-spaceship"></i> Upgrade to Pro
-              </Button>
-            </NavItem> */}
+               회원가입
+              </NavLink>
+          </NavItem>
+          <NavItem>
+              <NavLink
+                href="/freeboard"
+              >
+               게시판
+              </NavLink>
+          </NavItem>
+          <NavItem>
+              <NavLink
+                href="/respage"
+              >
+               음식점 목록
+              </NavLink>
+          </NavItem>
+          </>
+        )}
+           
           </Nav>
         </Collapse>
       </Container>

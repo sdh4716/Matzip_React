@@ -5,23 +5,22 @@ import NavbarWhite from "components/Navbars/NavbarWhite";
 import { Input } from "reactstrap";
 
 const InsertFormAdImage = (props) => {
-    const [adboardImage, setAdImageupload]= useState(null)
-    const [adboard, setAdBoard]= useState({
-            title : '',
-            content :'',
+    const [formContent , setFormContent]= useState({
+        name : '',
+        food : '한식',
+        introduction : '',
+        ownername : ''
     })
-    //sessionStorage.getItem("ID")
-
+    const getValue =(e) =>{
+        setFormContent({
+            ...formContent,
+           [e.target.name] : e.target.value
+        })
+    }
     const handleFileChange= (e)=>{
         setAdImageupload(e.target.files)
     }
 
-    const getValue= (e)=>{
-        setAdBoard({
-            ...adboard,
-           [e.target.name] : e.target.value
-        })
-    }
     
     /*const [loadImage, setLoadImage] = useState([])
 
@@ -64,7 +63,7 @@ const InsertFormAdImage = (props) => {
         <NavbarWhite/>
         <br/><br/><br/><br/><br/><br/>
         <Container>
-            <h5>이벤트 업로드</h5>
+            <h5>음식점 등록</h5>
             <Form.Group className="mb-3" controlId="title" >
                 <Form.Label>이벤트명</Form.Label>
                 <Form.Control type="text" placeholder="title" name="title" onChange={getValue} />
