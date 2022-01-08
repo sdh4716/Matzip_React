@@ -35,12 +35,12 @@ function Freeboard() {
     },[])
 
 
-    const loadContent =()=>{ //axios 서버값 저장
-    axios.get('/matzip/freeget')
-      .then((resp)=>{
-        setMovies({ ...movies, data: resp.data });
-        console.log(resp.data);
-      })
+  const loadContent =()=>{ //axios 서버값 저장
+  axios.get('/matzip/freeget')
+    .then((resp)=>{
+      setMovies({ ...movies, data: resp.data });
+      console.log(resp.data);
+    })
   }
 
   const [movies, setMovies] = useState({ // 영화 정보를 담는 state

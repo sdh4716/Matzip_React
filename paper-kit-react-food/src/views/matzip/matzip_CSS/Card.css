@@ -70,6 +70,13 @@
   font-weight: bold;
 }
 
+.res-name {
+  font-size: 15pt;
+  font-family: 'GowunDodum-Regular';
+  font-weight: bold;
+}
+
+
 
   .card.no-transition:hover, .card-board { 
         box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);

@@ -88,7 +88,7 @@ function IndexNavbar() {
             <NavbarBrand
             className="Navfont1"
             data-placement="bottom"
-            href="/index"
+            href="/adminpage"
             >
             관리자 페이지
             </NavbarBrand>

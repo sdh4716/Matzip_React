@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NewCardPractice from './NewCardPractice';
+import Today_page1 from "views/Admin/Today_page1";
+import Today_page2 from "views/Admin/Today_page2";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -47,10 +49,10 @@ export default class CenterMode extends Component {
       <div>
         <Slider {...settings}>
           <div>
-            <NewCardPractice/>
+            <Today_page1/>
           </div>
           <div>
-            <NewCardPractice/>
+            <Today_page2/>
           </div>
         </Slider>
         <br/>

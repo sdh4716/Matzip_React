@@ -29,7 +29,6 @@ import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
 
 
-import InfoPage from "views/matzip/InfoPage";
 
 import Join from "views/matzip/Join";
 import Login from "views/matzip/Login";
@@ -43,13 +42,12 @@ import RestaurantPage from "views/matzip/Restaurant/RestaurantPage";
 import InsertFormAdImage from "views/matzip/InsertFormAdImage";
 import Adview from "views/matzip/board/Adview";
 import MoviesPage from "views/matzip/pagination/MoviesPage";
-import InfoPage2 from "views/matzip/Infopage2";
-import InfoPage3 from "views/matzip/InfoPage3";
 import FreeView from "views/matzip/board/freeview";
 import AdView from "views/matzip/board/Adview"
 import Infopageget from "views/matzip/Infopageget";
 import QnaView from "views/matzip/board/qnaView";
 import RestaurantView from "views/matzip/Restaurant/RestaurantView";
+import Adminpage from "views/Admin/admin_page";
 // others
 
 ReactDOM.render(
@@ -83,18 +81,7 @@ ReactDOM.render(
       path="/login"
       component={Login}
       />
-      <Route
-        path="/info"
-        component={InfoPage}
-      />
-      <Route
-        path="/info2"
-        component={InfoPage2}
-      />
-      <Route
-        path="/info3"
-        component={InfoPage3}
-      />
+ 
 
 
       <Route
@@ -166,6 +153,14 @@ ReactDOM.render(
       path="/qnaboard"
       component={QNAboard}
       />
+
+      <Route
+      path="/adminpage"
+      component={Adminpage}
+      />
+
+
+      
       <Redirect to="/index" />
     </Switch>
   </BrowserRouter>,

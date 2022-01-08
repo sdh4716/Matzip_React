@@ -11,6 +11,8 @@ const Adview = (props) =>{
         margin-bottom : 100px
     `;
 
+  
+
     const [loadImage, setLoadImage] = useState({
         num:'',
         title:'',
@@ -59,11 +61,41 @@ const Adview = (props) =>{
                 상호명 : {loadImage.writer}
                 </CardSubtitle>
                 <br/>
-                <CardText>
+              
+                <CardText >
+                {/* style={{ -webkit-line-clamp: 2; }} */}
                 {loadImage.content}
                 </CardText>
-                <img src={process.env.PUBLIC_URL +"/image/"+ loadImage.adname} alt="image" />
+
+                <img src={process.env.PUBLIC_URL +"/image/"+ loadImage.adname} alt="image" width="400" height="300"/>
                 </CardBody>
+
+                {/* <Form>
+        
+            <Form.Group className="mb-3" controlId="title" >
+                <Form.Label>제목:</Form.Label>
+                <Form.Control type="text" placeholder="title" name="title"  value={loadImage.title}/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="title" >
+                <Form.Label>상호명:</Form.Label>
+                <Form.Control plaintext readOnly defaultValue={loadImage.writer} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="content" >
+                <Form.Label>내용:</Form.Label>
+                <Form.Control as="textarea" name="content" rows={3}  value={loadImage.content}/>
+            </Form.Group>
+            {
+                  sessionStorage.getItem("ID") === loadImage.writer?(
+                    <div align="right">
+                    <Button variant="danger" >수정</Button>
+                    <Button variant="dark" >삭제</Button>
+                    </div>
+                  ):(
+                    null
+                  )
+                
+            }
+            </Form> */}
             </Card>
             </div>
             

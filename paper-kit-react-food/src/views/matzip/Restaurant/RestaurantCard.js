@@ -7,8 +7,20 @@ import { Image } from "@chakra-ui/image";
 import Pagination2 from "../pagination/Pagination";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import styled from "styled-components"
+import Star_Rating2_list from "components/Star_Rating2_list"
 
 function RestaurantCard() {
+ 
+  // 음식점 소개가 2줄이 넘으면 넘어가는 글자들은 ...으로 대체
+  const Line = styled.div
+  `
+    overflow: hidden;
+    display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+  `
+
   const [loginRole, setLoginRole] = useState({
     id:sessionStorage.getItem("ID"),
     role:''
@@ -68,6 +80,28 @@ function RestaurantCard() {
       })
   }
 
+
+
+  const loadAvgstar =(num)=>{ 
+    axios.get('/matzip/avgStar/'+num)
+    .then((resp)=>{ 
+        console.log(resp.data)
+        // resp.data가 NaN이면 0을 return 
+        if(isNaN(resp.data)){
+            return 0;
+        // 소수 첫째자리에서 반올림   
+        }else{
+            return resp.data.toFixed(1)
+        }
+
+    })
+
+    
+  }
+
+  
+
+
   const [movies, setMovies] = useState({ // 음식점 정보를 담는 state
       data: [], // 음식점 정보
       pageSize: 8, // 한 페이지에 보여줄 아이템(음식점목록) 개수
@@ -85,12 +119,13 @@ function RestaurantCard() {
 
 return(
   <>
-  
   <Container>
-    <form class="d=flex mb-2"> 
-    <input placeholder="음식점 검색" name="word" class="form-control" 
-    onChange={getValue} value={word} > 
-    </input>
+    <form class="mb-2"> 
+    <div style={{width:400},{ margin :0}}>
+      <input placeholder="음식점 검색" name="word" class="form-control" 
+      onChange={getValue} value={word} > 
+      </input>
+    </div>
     </form>
     <br/><br/>
   </Container>
@@ -110,63 +145,70 @@ return(
     )
   }
 </div>
+
 <Row>
-  {pagedMovies.map((movie) => (
+  {pagedMovies.map((cards) => (
 <div>
 <br/>
 <br/>
 <br/>
 <br/>
   <Col>
-<Box maxH="lg" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
-  <Image src={process.env.PUBLIC_URL +"/image/"+ movie.newname} />
+<Box maxH="lg" minH="lg" maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden">
+  <Image src={process.env.PUBLIC_URL +"/image/"+ cards.newname} height="300" style={{ width: '100%' }}/>
   <Box p="6">
     <Box d="flex" alignItems="baseline" className="info-title">
-      <Badge borderRadius="full" px="2" colorScheme="orange">
+      <Badge borderRadius="full" px="2" colorScheme="red">
         구분
       </Badge>
       <Box
         fontFamily=""
         color="gray.500"
-        fontWeight="semibold"
+        fontWeight="bold"
         letterSpacing="wide"
         fontSize="xs"
         textTransform="uppercase"
         ml="2"
       >
-       {movie.food}
+       {cards.food}
       </Box>
     </Box>
+
     <Box
-      className="info-title"
+      className="res-name"
       mt="1"
       fontWeight="semibold"
       as="h4"
       lineHeight="tight"
       isTruncated
     >
-      {movie.name}
+      {cards.name}
     </Box>
+    <br/>
     <Box className="info-title">
-    {movie.introduction}
+    <Line>
+      <div>
+    {cards.introduction}
+    
+      </div>
+      
+    </Line>
+    
       <Box as="span" color="gray.600" fontSize="sm">
+      
+      
+        
+        
 
       </Box>
+   
+
     </Box>
-    <Box d="flex" mt="2" alignItems="center">
-      {Array(5)
-        .fill("")
-        .map((_, i) => (
-          '★'
-        ))}
-      <Box as="span" ml="2" color="gray.600" fontSize="sm" className="info-title">
-        {movie.reviewCount} reviews
-      </Box>
-    </Box>
+   
     <div align="center">
     <br/>
-    <Link to={"/resview/"+movie.num}>
-    <Button className="btn-round" color="danger" size="sm" align="center"> 상세정보 </Button>
+    <Link to={"/resview/"+cards.num}>
+    <Button className="btn-round detail-btn" color="danger" size="sm" align="center"> 상세정보 </Button>
     </Link>
     </div>
     

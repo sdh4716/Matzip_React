@@ -12,8 +12,7 @@ const RestaurantInsert = (props) => {
         food : '한식',
         introduction : '',
         ownername : sessionStorage.getItem("ID"),
-        wido:'', //위치값(위도)
-        gyeongdo:'' //위치값 경도
+        address:'' // 주소
     })
 
     const [adboardImage, setAdImageupload]= useState(null)
@@ -22,6 +21,7 @@ const RestaurantInsert = (props) => {
         setAdImageupload(e.target.files)
     }
 
+    // form에 입력된 값을 가져온다
     const getValue =(e) =>{
         setFormContent({
             ...formContent,
@@ -52,9 +52,8 @@ const RestaurantInsert = (props) => {
             formData.append("food", formContent.food)
             formData.append("ownername", formContent.ownername)
             formData.append("introduction", formContent.introduction)
-            formData.append("wido", formContent.wido)
-            formData.append("gyeongdo", formContent.gyeongdo)
             formData.append("member_id", sessionStorage.getItem("ID"))
+            formData.append("address", formContent.address)
         }
         const config= {
             headers:{
@@ -105,15 +104,9 @@ const RestaurantInsert = (props) => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="location" >
-                <Form.Label>위치정보</Form.Label>
-                <Row>
-                    <Col>
-                    <Form.Control placeholder="위도" type="text" name="wido" onChange={getValue}/>
-                    </Col>
-                    <Col>
-                    <Form.Control placeholder="경도" type="text" name="gyeongdo" onChange={getValue}/>
-                    </Col>
-                </Row>
+                <Form.Label>위치정보 (맵에 표시되는 주소입니다 정확하게 입력해주세요!!)</Form.Label>
+                <Form.Control placeholder="주소" type="text" name="address" onChange={getValue}/>
+
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="introduction" >

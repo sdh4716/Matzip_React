@@ -10,7 +10,7 @@ export default function App({star}) {
       <Rating
         //onClick={handleRating}
         ratingValue={(rating*20)} //별점 데이터값
-        size={25} //사이즈
+        size={15} //사이즈
         label
         showTooltip
         transition
